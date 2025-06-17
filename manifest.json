@@ -1,0 +1,7 @@
+{
+  "name": "Lottielab JSON Importer",
+  "id": "1516845127039989509",
+  "main": "code.js",
+  "ui": "ui.html",
+  "api": "1.0.0"
+}
