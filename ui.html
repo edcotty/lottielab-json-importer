@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="file" id="jsonInput" accept=".json">
+  <button id="importBtn">Import Lottie JSON</button>
+  <script>
+    document.getElementById('importBtn').addEventListener('click', () => {
+      const fileInput = document.getElementById('jsonInput');
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          parent.postMessage(
+            { pluginMessage: { type: 'import-json', data: reader.result } },
+            '*'
+          );
+        };
+        reader.readAsText(file);
+      }
+    });
+  </script>
+</body>
+</html>
